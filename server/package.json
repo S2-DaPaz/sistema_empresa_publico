@@ -1,0 +1,27 @@
+{
+  "name": "rv-sistema-server",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "node --test",
+    "migrate:neon": "node scripts/migrate-neon.js",
+    "admin:reset": "node scripts/reset-admin.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.10.1",
+    "pg": "^8.13.1",
+    "puppeteer": "^24.36.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}

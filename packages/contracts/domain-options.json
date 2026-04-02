@@ -1,0 +1,32 @@
+{
+  "taskStatus": [
+    { "value": "aberta", "label": "Aberta" },
+    { "value": "em_andamento", "label": "Em andamento" },
+    { "value": "concluida", "label": "Concluída" }
+  ],
+  "taskPriority": [
+    { "value": "alta", "label": "Alta" },
+    { "value": "media", "label": "Média" },
+    { "value": "baixa", "label": "Baixa" }
+  ],
+  "reportStatus": [
+    { "value": "rascunho", "label": "Rascunho" },
+    { "value": "enviado", "label": "Enviado" },
+    { "value": "finalizado", "label": "Finalizado" }
+  ],
+  "budgetStatus": [
+    { "value": "em_andamento", "label": "Em andamento" },
+    { "value": "aprovado", "label": "Aprovado" },
+    { "value": "recusado", "label": "Recusado" }
+  ],
+  "signatureMode": [
+    { "value": "none", "label": "Sem assinatura" },
+    { "value": "client", "label": "Cliente" },
+    { "value": "tech", "label": "Técnico" },
+    { "value": "both", "label": "Cliente e técnico" }
+  ],
+  "signatureScope": [
+    { "value": "all_pages", "label": "Todas as páginas" },
+    { "value": "last_page", "label": "Apenas ao final" }
+  ]
+}

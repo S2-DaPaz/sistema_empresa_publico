@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class ThemeService {
+  ThemeService._();
+
+  static final ThemeService instance = ThemeService._();
+
+  static const _chaveArmazenamento = 'theme_mode';
+
+  final ValueNotifier<ThemeMode> mode = ValueNotifier(ThemeMode.system);
+
+  ThemeMode get current => mode.value;
+
+  Future<void> restore() async {
+    final prefs = await SharedPreferences.getInstance();
+    final stored = prefs.getString(_chaveArmazenamento);
+    if (stored == null || stored.isEmpty) return;
+    mode.value = _deArmazenamento(stored);
+  }
+
+  Future<void> setThemeMode(ThemeMode value) async {
+    if (mode.value == value) return;
+    mode.value = value;
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_chaveArmazenamento, _paraArmazenamento(value));
+  }
+
+  String _paraArmazenamento(ThemeMode value) {
+    switch (value) {
+      case ThemeMode.light:
+        return 'light';
+      case ThemeMode.dark:
+        return 'dark';
+      case ThemeMode.system:
+        return 'system';
+    }
+  }
+
+  ThemeMode _deArmazenamento(String raw) {
+    switch (raw) {
+      case 'light':
+        return ThemeMode.light;
+      case 'dark':
+        return ThemeMode.dark;
+      default:
+        return ThemeMode.system;
+    }
+  }
+}
